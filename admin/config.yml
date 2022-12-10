@@ -1,0 +1,172 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update
+publish_mode: editorial_workflow
+media_folder: "assets/images"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts/"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "pages"
+    label: "Pages"
+    editor:
+      preview: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "hidden", default: "Home" }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "default",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Confidentiality Page"
+        name: "confidentiality"
+        file: "confidentiality.md"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "hidden",
+              default: "confidentiality",
+            }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "default",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Couple Therapy Page"
+        name: "couple-therapy"
+        file: "couple-therapy.md"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "hidden",
+              default: "confidentiality",
+            }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "default",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Executive Coaching Page"
+        name: "executive-coaching"
+        file: "executive-coaching.md"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "hidden",
+              default: "confidentiality",
+            }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "default",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "FAQs Page"
+        name: "faqs"
+        file: "faqs.md"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "hidden",
+              default: "confidentiality",
+            }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "default",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Fees Page"
+        name: "fees"
+        file: "fees.md"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "hidden",
+              default: "confidentiality",
+            }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "default",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Gestalt Therapy"
+        name: "gestalt-therapy"
+        file: "gestalt-therapy.md"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "hidden",
+              default: "confidentiality",
+            }
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "default",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "config"
+    label: "Config"
+    editor:
+      preview: false
+    files:
+      - label: "Navigation"
+        name: "navigation"
+        file: "_data/navigation.yml"
+        fields:
+          - label: "Navigation Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
+      - label: "Logo"
+        name: "logo"
+        file: "_includes/logo.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Phone number"
+        name: "phone"
+        file: "_includes/phone-number.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Email link"
+        name: "email"
+        file: "_includes/email-link.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Footer"
+        name: "footer"
+        file: "_includes/footer.md"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }

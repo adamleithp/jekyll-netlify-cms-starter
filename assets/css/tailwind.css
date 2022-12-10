@@ -1,0 +1,62 @@
+---
+---
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  font-family: "Jost", Verdana, sans-serif;
+}
+
+h1 {
+  @apply text-4xl;
+}
+h2 {
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+h4 {
+  @apply text-xl;
+}
+h5,
+h6 {
+  @apply text-xl;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold mb-4;
+}
+
+p {
+  @apply mb-4 font-normal text-base;
+}
+ul {
+  @apply pl-4 list-disc mb-4;
+}
+ul li {
+  @apply mb-0 font-normal;
+}
+a {
+  @apply underline;
+}
+nav a {
+  @apply no-underline hover:underline;
+}
+blockquote {
+  @apply pl-4 py-2 border-l-4 border-gray-400 mb-4;
+}
+
+main img {
+  @apply rounded-lg;
+}
+
+.max-w-container {
+  @apply max-w-prose px-4;
+}

@@ -1,0 +1,29 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Celia Macnab MSc" # the name of your site, e.g. ACME Corp.
+
+plugins:
+  - jekyll-postcss
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  sourcemap: never
+
+postcss:
+  cache: false
+
+exclude:
+  - .gitignore
+  - bin
+  - node_modules
+  - package-lock.json
+  - postcss.config.js
+  - README.md
+  # - assets/css/tailwind.scss
+
+# files Jekyll should not delete from .site
+keep_files:
+  - assets/css/tailwind.css
+  - assets/css/tailwind.css.map

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- prettier-ignore -->
+    {% seo %}
+    <!-- prettier-ignore -->
+    {% feed_meta %}
+    <link rel="stylesheet" href="{{ "/assets/css/tailwind.css" | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  </head>
+  <body class="pb-12">
+    <div class="px-4">{% include navigation.html %}</div>
+    <main class="max-w-container mx-auto px-8 relative">{{ content }}</main>
+    <div class="max-w-container mx-auto px-8 mt-8">
+      {% capture footer %}{% include footer.md %}{% endcapture %}
+      {{ footer | markdownify }}
+    </div>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
